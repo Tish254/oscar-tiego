@@ -23,7 +23,6 @@ navLinks.forEach( (link) => {
 })
 
 nav_links.forEach((link) => {
-    console.log(link)
     link.addEventListener('click', (event)=> {
         document.querySelector('.active').classList.remove('active')
         event.target.classList.add('active')
@@ -35,12 +34,67 @@ window.addEventListener("scroll", (event) => {
     sections.forEach( section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop) {
+        let calc = sectionTop - sectionHeight/4;
+        if (pageYOffset >= calc) {
             const sectionName = section.getAttribute('id');
-            console.log(sectionName);
+            navLinks.forEach( link => {
+                if (link.classList.contains(sectionName)) {
+                    document.querySelector('.active-mobile').classList.remove('active-mobile')
+                    link.classList.add('active-mobile')
+                }
+            })
         }
     })
 })
+
+window.addEventListener("scroll", (event) => {
+    let current = '';
+    sections.forEach( section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        let calc = sectionTop - sectionHeight/4;
+        if (pageYOffset >= calc) {
+            const sectionName = section.getAttribute('id');
+            nav_links.forEach( link => {
+                if (link.classList.contains(sectionName)) {
+                    document.querySelector('.active').classList.remove('active')
+                    link.classList.add('active')
+                }
+            })
+        }
+    })
+})
+
+
+let totalPageHeight = document.body.scrollHeight; 
+
+let scrollPoint = window.scrollY + window.innerHeight;
+
+if(scrollPoint >= totalPageHeight)
+
+window.onscroll = function(ev) {
+    let totalPageHeight = document.body.scrollHeight; 
+
+    let scrollPoint = window.scrollY + window.innerHeight;
+
+    if(scrollPoint >= totalPageHeight) {
+        let elem = document.querySelector('.nav__link.contact');
+        document.querySelector('.active-mobile').classList.remove('active-mobile')
+        elem.classList.add('active-mobile')
+    }
+};
+
+window.onscroll = function(ev) {
+    let totalPageHeight = document.body.scrollHeight; 
+
+    let scrollPoint = window.scrollY + window.innerHeight;
+
+    if(scrollPoint >= totalPageHeight) {
+        let elem = document.querySelector('.nav-link.contact');
+        document.querySelector('.active').classList.remove('active')
+        elem.classList.add('active')
+    }
+};
 
 function navToggleClicked() {
     // alert('window toggled');
