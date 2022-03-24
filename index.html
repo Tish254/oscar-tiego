@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DevTish Portfolio Website</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />  
+        <script src="https://kit.fontawesome.com/51d4663447.js" crossorigin="anonymous"></script>
+        
+        
+
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Roboto+Slab:400,700&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body>
+        <header id="#home-header">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html"><img src="img/dev-tish.png" alt=""></a>
+                </div>
+                <div class="nav-bar">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                        <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                        <li class="nav-item"><a href="#about" class="nav-link">About me</a></li>
+                        <li class="nav-item"><a href="#work" class="nav-link">Work</a></li>
+                        <li class="nav-item"><a href="#footer" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mobile-nav-container">
+                <div class="logo">
+                    <a href="index.html"><img src="img/dev-tish.png" alt=""></a>
+                </div>
+
+                <nav id="nav-id" class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active-mobile">Home</a></li>
+                        <li class="nav__item"><a href="#services" class="nav__link">My Services</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About me</a></li>
+                        <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+                        <li class="nav__item"><a href="#footer" class="nav__link">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <i id="nav-change" class="nav-toggle fa-solid fa-bars" onclick="navToggleClicked()"></i>
+            </div>
+        </header>
+        
+        <!-- Introduction -->
+        <section class="section intro" id="home">
+            <h1 class="section__title section__title--intro">
+                Hi, I am <strong>Oscar Tiego</strong>
+            </h1>
+            <p class="section__subtitle section__subtitle--intro">front-end dev</p>
+            <img src="img/hero-bestt.png" alt="a picture of Oscar Tiego smiling" class="intro__img">
+        </section>
+        
+        
+        <!-- My services -->
+        <section class="section my-services" id="services">
+            <h2 class="section__title section__title--services">What I do</h2>
+            <div class="services">
+                <div class="service">
+                    <i class="fa-solid fa-globe"></i>
+                    <h3>Web Design</h3>
+                    <p>I Design Websites Using Productivity tools Like Figma, Adobe Illustrator and Adobe XD to ensure the ultimate user expirience</p>
+                </div> <!-- / service -->
+                
+                <div class="service">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <h3>Front End development</h3>
+                    <p>I Develop Websites Using Css, Html and Javascript for responsiveness in all devices.</p>
+                </div> <!-- / service -->
+                
+                <div class="service">
+                    <i class="fa-brands fa-windows"></i>
+                    <h3>Desktop Development</h3>
+                    <p>I make Desktop Apps using the PyQt Framework for beautiful User interfaces</p>
+                </div> <!-- / service -->
+            </div> <!-- / services -->
+            
+            <a href="#work" class="btn">My Work</a>
+        </section>
+        
+        
+        <!-- About me -->
+        <section class="section about-me" id="about">
+           <h2 class="section__title section__title--about">Who I am</h2>
+           <p class="section__subtitle section__subtitle--about">Designer & developer based out of Nairobi</p>
+           
+           <div class="about-me__body">
+               <p>I am a web and Desktop designer with and extreme interests in block chain technologies, cyber security and Database Programming</p>
+               <p>I enjoy learning new Frameworks and languages like Kotlin and react. On the side i enjoy playing chess and building things for fun.</p>
+           </div>
+           
+           <img src="img/hero-right.png" alt="A picture of me" class="about-me__img">
+        </section>
+        
+        <!-- My Work -->
+        <section class="section my-work" id="work">
+            <h2 class="section__title section__title--work">My work</h2>
+            <p class="section__subtitle section__subtitle--work">A selection of my range of Work</p>
+            
+            <div class="portfolios">
+                <div class="portfolio-item">
+                    
+                    <div class="image">
+                        <img src="img/scaled.png" alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/Tish254" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+
+                    <div class="image">
+                        <img src="img/tempsnip.png" alt="" class="portfolio__img">
+                    </div>
+
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/Tish254" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="img/tempsnip2.png" alt="" class="portfolio__img">
+                    </div>
+
+                    <div class="hover-items">
+                        <h3>Project Source</h3>
+                        <div class="icons">
+                            <a href="https://github.com/Tish254" class="icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        
+        
+        <!-- Footer -->
+        <footer class="footer" id="footer">
+            <!-- replace with your own email address -->
+            <a href="mailto:tiegomseeraoscar295@gmail.com" class="footer__link">tiegomseeraoscar295@gmail.com</a>
+            <ul class="social-list">
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.facebook.com/oscar.tiego.92/" target="_blank">
+                        <i class="fa-brands fa-facebook social-icon"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.linkedin.com/in/oscar-tiego-b1b190171" target="_blank">
+                        <i class="fa-brands fa-linkedin social-icon"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://twitter.com/py12317" target="_blank">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://github.com/Tish254" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+
+
+        <script src="js/index.js"></script>
+    </body>
+</html>
