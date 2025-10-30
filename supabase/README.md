@@ -19,6 +19,7 @@ This directory contains the SQL migration files and seed data for the portfolio 
 ## Overview
 
 The database schema supports:
+
 - **Blog System**: Posts, tags, and author attribution
 - **Portfolio Projects**: Project showcases with images and metadata
 - **Services**: Service offerings displayed on the site
@@ -31,51 +32,69 @@ The database schema supports:
 ### Tables
 
 #### `profiles`
+
 Stores user/author information with role-based access control.
+
 - **Fields**: id, email, display_name, avatar_url, role, created_at, updated_at
 - **Roles**: admin, editor, viewer
 - **Indexes**: email, role
 
 #### `blog_posts`
+
 Blog content with publishing workflow.
+
 - **Fields**: id, title, slug, excerpt, content, status, published_at, author_id, featured_image_id, view_count, created_at, updated_at
 - **Status**: draft, published, archived
 - **Indexes**: slug (unique), status, author_id, published_at
 - **Relations**: author (profiles), featured_image (media)
 
 #### `blog_tags`
+
 Tags for categorizing blog posts.
+
 - **Fields**: id, name, slug, description, created_at
 - **Indexes**: slug (unique)
 
 #### `blog_post_tags`
+
 Many-to-many join table for blog posts and tags.
+
 - **Fields**: blog_post_id, blog_tag_id, created_at
 - **Composite Key**: (blog_post_id, blog_tag_id)
 
 #### `portfolio_projects`
+
 Portfolio project showcases.
+
 - **Fields**: id, title, slug, description, technologies[], live_url, github_url, display_order, is_featured, is_published, created_at, updated_at
 - **Indexes**: slug (unique), display_order, is_published, is_featured
 
 #### `project_images`
+
 Images associated with portfolio projects.
+
 - **Fields**: id, project_id, storage_path, alt_text, is_primary, display_order, created_at
 - **Indexes**: project_id, is_primary, display_order
 
 #### `services`
+
 Service offerings displayed on the site.
+
 - **Fields**: id, title, description, icon, display_order, is_published, created_at, updated_at
 - **Indexes**: display_order, is_published
 
 #### `site_content`
+
 Key-value store for dynamic site content (hero, about sections, etc.).
+
 - **Fields**: id, key, content_type, value, description, created_at, updated_at
 - **Content Types**: text, html, json, image_url
 - **Indexes**: key (unique)
 
 #### `media`
+
 Centralized metadata for media assets.
+
 - **Fields**: id, storage_path, file_name, mime_type, file_size, alt_text, caption, uploaded_by, created_at, updated_at
 - **Indexes**: storage_path, uploaded_by
 
@@ -89,6 +108,7 @@ Centralized metadata for media assets.
 All tables have RLS enabled with the following policies:
 
 ### Public Read Access
+
 - ✅ Published blog posts (`status='published'` AND `published_at <= NOW()`)
 - ✅ Published portfolio projects (`is_published=true`)
 - ✅ Published services (`is_published=true`)
@@ -99,7 +119,9 @@ All tables have RLS enabled with the following policies:
 - ✅ Project images
 
 ### Admin Full CRUD
+
 Users with `role='admin'` in the `profiles` table have:
+
 - ✅ Full CREATE, READ, UPDATE, DELETE access on all tables
 - ✅ Can view unpublished/draft content
 - ✅ Can manage user profiles
@@ -117,11 +139,13 @@ Users with `role='admin'` in the `profiles` table have:
 ### Prerequisites
 
 1. Install Supabase CLI:
+
    ```bash
    npm install -g supabase
    ```
 
 2. Initialize Supabase (if not already done):
+
    ```bash
    supabase init
    ```
@@ -194,7 +218,7 @@ After applying migrations and seeds, verify with these queries:
 
 ```sql
 -- Check table counts
-SELECT 
+SELECT
     'profiles' as table_name, COUNT(*) as count FROM profiles
 UNION ALL
 SELECT 'blog_posts', COUNT(*) FROM blog_posts
@@ -210,9 +234,9 @@ UNION ALL
 SELECT 'media', COUNT(*) FROM media;
 
 -- Verify RLS is enabled
-SELECT tablename, rowsecurity 
-FROM pg_tables 
-WHERE schemaname = 'public' 
+SELECT tablename, rowsecurity
+FROM pg_tables
+WHERE schemaname = 'public'
 AND tablename IN ('profiles', 'blog_posts', 'portfolio_projects', 'services', 'site_content');
 
 -- Test public access (should only see published content)
@@ -234,6 +258,7 @@ supabase db diff
 ```
 
 Or manually review:
+
 - All tables have primary keys
 - Foreign keys have proper CASCADE/SET NULL actions
 - Indexes on frequently queried columns
@@ -245,9 +270,11 @@ Or manually review:
 The seed script populates:
 
 ### Profiles
+
 - 1 admin user (Oscar Tiego)
 
 ### Site Content (19 entries)
+
 - Hero section (name, title, greeting, image)
 - About section (title, subtitle, 2 paragraphs, image)
 - Work section (title, subtitle)
@@ -255,26 +282,32 @@ The seed script populates:
 - Contact/social links (email, Facebook, LinkedIn, Twitter, GitHub)
 
 ### Services (3 entries)
+
 1. Web Design (Figma, Adobe Illustrator, Adobe XD)
 2. Web Development (HTML, CSS, JavaScript, React, Express, Node.js)
 3. Desktop Development (PyQt Python framework)
 
 ### Portfolio Projects (3 entries)
+
 1. Dukas E-Commerce
 2. Zebraz E-learning
 3. Akan Name Generator
 
 ### Project Images (3 entries)
+
 - One primary image per project
 
 ### Blog Tags (10 entries)
+
 Web Development, JavaScript, React, Node.js, CSS, Python, Database, Blockchain, Cybersecurity, Tutorial
 
 ### Blog Posts (4 entries)
+
 - 3 published posts with relevant content
 - 1 draft post for testing
 
 ### Media (6 entries)
+
 - References to existing static assets (hero images, logos, project thumbnails)
 
 ## Updating Schema
