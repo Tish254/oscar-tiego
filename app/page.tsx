@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe, faWandMagicSparkles } from '@fortawesome/free-solid-svg-icons';
 import { faWindows, faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -28,32 +28,51 @@ export default function Home() {
           <div className="service">
             <FontAwesomeIcon icon={faGlobe} />
             <h3>Web Design</h3>
-            <p>I design websites sing productivity tools like Figma, Adobe Illustrator and Adobe XD to ensure the ultimate user expirience</p>
+            <p>
+              I design websites sing productivity tools like Figma, Adobe Illustrator and Adobe XD
+              to ensure the ultimate user expirience
+            </p>
           </div>
 
           <div className="service">
             <FontAwesomeIcon icon={faWandMagicSparkles} />
             <h3>Web development</h3>
-            <p>I develop websites using Css, Html, Vanilla Javascript, React.js, with Express.js and Node.js</p>
+            <p>
+              I develop websites using Css, Html, Vanilla Javascript, React.js, with Express.js and
+              Node.js
+            </p>
           </div>
 
           <div className="service">
             <FontAwesomeIcon icon={faWindows} />
             <h3>Desktop Development</h3>
-            <p>I make desktop applications using the PyQt python framework for beautiful user interfaces</p>
+            <p>
+              I make desktop applications using the PyQt python framework for beautiful user
+              interfaces
+            </p>
           </div>
         </div>
 
-        <a href="#work" className="btn">My Work</a>
+        <a href="#work" className="btn">
+          My Work
+        </a>
       </section>
 
       <section className="section about-me" id="about">
         <h2 className="section__title section__title--about">Who I am</h2>
-        <p className="section__subtitle section__subtitle--about">Designer & developer based out of Nairobi</p>
+        <p className="section__subtitle section__subtitle--about">
+          Designer & developer based out of Nairobi
+        </p>
 
         <div className="about-me__body">
-          <p>I am a web and desktop designer with extreme interests in block chain technologies, cyber security and database programming</p>
-          <p>I enjoy learning new frameworks and languages like C# and React. On the side i enjoy playing chess and building things for fun.</p>
+          <p>
+            I am a web and desktop designer with extreme interests in block chain technologies,
+            cyber security and database programming
+          </p>
+          <p>
+            I enjoy learning new frameworks and languages like C# and React. On the side i enjoy
+            playing chess and building things for fun.
+          </p>
         </div>
 
         <Image
@@ -78,7 +97,12 @@ export default function Home() {
               <h3>Dukas E-Commerce</h3>
               <h3>Project Page</h3>
               <div className="icons">
-                <Link href="https://tish254.github.io/Dukas/" className="icon" target="_blank" rel="noopener noreferrer">
+                <Link
+                  href="https://tish254.github.io/Dukas/"
+                  className="icon"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FontAwesomeIcon icon={faGithub} />
                 </Link>
               </div>
@@ -93,7 +117,12 @@ export default function Home() {
               <h3>Zebraz E-learning</h3>
               <h3>Project Page</h3>
               <div className="icons">
-                <Link href="https://tish254.github.io/Zebraz/" className="icon" target="_blank" rel="noopener noreferrer">
+                <Link
+                  href="https://tish254.github.io/Zebraz/"
+                  className="icon"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FontAwesomeIcon icon={faGithub} />
                 </Link>
               </div>
@@ -108,7 +137,12 @@ export default function Home() {
               <h3>Akan Name Generator</h3>
               <h3>Project Page</h3>
               <div className="icons">
-                <Link href="https://tish254.github.io/akan-name/" className="icon" target="_blank" rel="noopener noreferrer">
+                <Link
+                  href="https://tish254.github.io/akan-name/"
+                  className="icon"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FontAwesomeIcon icon={faGithub} />
                 </Link>
               </div>

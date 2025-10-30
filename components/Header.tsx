@@ -5,8 +5,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { useUser } from '@/lib/supabase/provider';
 
 export default function Header() {
+  const { user } = useUser();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
